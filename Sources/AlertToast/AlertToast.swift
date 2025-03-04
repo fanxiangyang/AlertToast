@@ -769,7 +769,7 @@ public extension View{
     ///   - item: Binding<Item?>
     ///   - alert: (Item?) -> AlertToast
     /// - Returns: `AlertToast`
-    func toast<Item>(item: Binding<Item?>, duration: Double = 2, tapToDismiss: Bool = true, offsetY: CGFloat = 0, alert: @escaping (Item?) -> AlertToast, onTap: (() -> ())? = nil, completion: (() -> ())? = nil) -> some View where Item : Identifiable {
+    func toast<Item>(item: Binding<Item?>, duration: Double = 2, tapToDismiss: Bool = true, offsetY: CGFloat = 0, alert: @escaping (Item?) -> AlertToast<Item>, onTap: (() -> ())? = nil, completion: (() -> ())? = nil) -> some View where Item : Identifiable {
         modifier(
             AlertToastModifier(
                 isPresenting: Binding(
